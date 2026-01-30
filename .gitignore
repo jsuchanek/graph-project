@@ -1,0 +1,11 @@
+osm_pbf/
+precomputed/
+county/
+alpr/
+.venv/
+__pycache__/
+graphs.tar.gz
+*.pyc
+.DS_Store
+Thumbs.db
+.env
