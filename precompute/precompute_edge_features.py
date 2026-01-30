@@ -24,7 +24,9 @@ HIGHWAY_TYPES = [
 HIGHWAY_TO_IDX = {h: i for i, h in enumerate(HIGHWAY_TYPES)}
 
 STATE_NAME_TO_FIPS = {
-    "ohio": "39",
+    "idaho": "16",
+    "north-dakota": "38",
+    "iowa": "19",
     # "california": "06",
     # "texas": "48",
     # "new-york": "36",
@@ -172,6 +174,7 @@ def run():
 
         for _, county in counties.iterrows():
             process_county(osm_file, county, alpr_gdf, out_dir)
+        print(f"Finished state {state.upper()}")
 
 if __name__ == "__main__":
     run()
