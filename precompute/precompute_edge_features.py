@@ -24,9 +24,8 @@ HIGHWAY_TYPES = [
 HIGHWAY_TO_IDX = {h: i for i, h in enumerate(HIGHWAY_TYPES)}
 
 STATE_NAME_TO_FIPS = {
-    "idaho": "16",
-    "north-dakota": "38",
-    "iowa": "19",
+    "texas": "48",
+    "california": "06",
     # "california": "06",
     # "texas": "48",
     # "new-york": "36",
@@ -164,9 +163,10 @@ def run():
     ).to_crs(epsg=4326)
 
     alpr_gdf = gpd.read_file("alpr/export.geojson").to_crs(epsg=4326)
+    
 
     for state, fips in STATE_NAME_TO_FIPS.items():
-        print(f"\n=== Processing {state.upper()} ===")
+        print(f"\n=== Processing {state.upper()} ===", flush=True)
         osm_file = f"osm_pbf/{state}-260116.osm.pbf"
         counties = county_gdf[county_gdf["STATE"] == fips]
 

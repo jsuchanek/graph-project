@@ -9,3 +9,9 @@ graphs.tar.gz
 .DS_Store
 Thumbs.db
 .env
+
+slurm_scripts/
+results*/
+logs/
+html/
+graphsage_html/
